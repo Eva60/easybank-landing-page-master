@@ -1,0 +1,123 @@
+.hero {
+    display: block;
+    background-color: $veryLightGray;
+    max-height: 656px;
+   
+    &_container {
+        @include breakpoint-up(large) {
+            display: flex;
+            align-items: center;
+        }
+    }
+    
+
+   &_image {
+    position:relative;
+    @include breakpoint-down(medium) {
+        background-image: url('/images/bg-intro-mobile.svg');
+        width: 100%;
+        min-height: 483px;
+        // border: 1px greenyellow solid;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center center;
+        
+        @include breakpoint-down(small) {
+            min-height: 283px
+        }
+    }
+    
+    
+    
+    @include breakpoint-up(large) {
+        order: 2;
+        flex: 1.25;
+        // background-image: url('/images/bg-intro-desktop.svg');
+        height: 656px;
+        // background-size: 190%;
+        // background-position: -63px -225px;
+    }
+    &::before, &::after {
+        // border: 1px solid magenta;
+    }
+
+    &::before{
+        @include breakpoint-up(large) {
+            content:"";
+            display: block;
+            position: absolute;
+            background-image: url('/images/bg-intro-desktop.svg');
+            background-repeat: no-repeat;
+            background-position: 13% 70%;
+            background-size: 170%;
+            width: 115%;
+            height: 100%;
+           
+        }
+        
+    }
+    
+    &::after {
+        content:"";
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-image: url('/images/image-mockups.png');
+        background-repeat: no-repeat;
+        background-size: 89%;
+        // left: 50%;
+        // transform: translateX(-50%)  ;
+        // border: 1px red solid;
+        background-position: center bottom;
+        left: 0;
+
+        @include breakpoint-up(medium) {
+            background-size: 85%;
+        }
+
+        @include breakpoint-up(large) {
+            width: 120%;
+            height: 120%;
+            background-position: -500% 90%;
+            background-size: 102%;
+        }
+       
+        }
+   }
+
+    &_text{
+        text-align: center;
+        // border: 1px royalblue solid;
+
+        @include breakpoint-up(large) {
+            flex: 1;
+            order: 1;
+            text-align: left;
+        }
+
+        // &_heading {
+        //      text-align:center;
+        // }
+        p {
+            font-size: 14px;
+            font-weight: 300;
+            color: $grayishBlue;
+            @include breakpoint-up(large) {
+                font-size: $font-med;
+            }
+        }
+    
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: 22px;
+            transition: opacity 300ms ease-in-out;
+
+            &:hover {
+                opacity: 0.75;
+            }
+        }
+    }
+   
+}
