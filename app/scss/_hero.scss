@@ -1,7 +1,7 @@
 .hero {
     display: block;
     background-color: $veryLightGray;
-    max-height: 656px;
+    max-height: 890px;
    
     &_container {
         @include breakpoint-up(large) {
@@ -96,20 +96,18 @@
             text-align: left;
         }
 
-        // &_heading {
-        //      text-align:center;
-        // }
+        &_heading {
+            padding-top: 25px;
+            padding-right: 22px;
+            padding-left: 22px;
+         }
         p {
-            font-size: 14px;
-            font-weight: 300;
-            color: $grayishBlue;
-            @include breakpoint-up(large) {
-                font-size: $font-med;
-            }
+            padding: 22px 25px;
         }
     
         a {
             display: inline-block;
+            margin-bottom: 90px;
             margin-top: 10px;
             margin-left: 22px;
             transition: opacity 300ms ease-in-out;
