@@ -21,7 +21,7 @@
         @include breakpoint-up(medium) {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 25px;
         }
         
         @include breakpoint-down(small) {
