@@ -67,12 +67,31 @@ a {
     text-decoration: none;
 }
 
-.button {
+button, .button {
+    position: relative;
     font-size: 16px;
+    font-weight: 400;
     color: $white;
     padding: 13px 34px;
     border-radius: 50px;
     background: linear-gradient(to right, $limeGreen, $brightCyan);
+
+    &::before {
+        content: '';
+        background-color: rgba($color:#FFFF, $alpha: 0.25);
+        position: absolute;
+        border-radius: 50px;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 200ms ease-in-out;
+    }
+    &:hover::before {
+        opacity: 1;
+    }
+
 }
 
 

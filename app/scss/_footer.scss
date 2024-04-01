@@ -1,0 +1,137 @@
+.footer {
+    background-color: $darkBlue;
+    @include breakpoint-up(large) {
+        padding: 43px 116px;
+        height: 195px;
+    }
+    &__container{
+        @include breakpoint-down(medium) {
+            text-align: center;
+        }
+        @include breakpoint-up(large) {
+            
+            display: grid;
+            grid-template-columns: 1.5fr repeat(2, 1fr) 2.5fr;
+            grid-template-rows: 1fr auto;
+            grid-template-areas: 
+                "logo col1 col2 cta"
+                "social col1 col2 copyright";
+            justify-items: start;
+            gap: 2em;
+        
+
+        }
+    }
+    
+    
+    &__logo {
+        @include breakpoint-down(medium) {
+            display: block;
+            margin-bottom: 30px;
+            padding-top: 38px;
+        }
+        @include breakpoint-up(large) {
+            img {
+                height: 23px;
+                width: 140px;
+            }
+
+            grid-area: logo;
+        }
+    }
+    &__social {
+        a {
+            &:hover svg path {
+                fill: $limeGreen;
+            }
+        }
+        @include breakpoint-down(medium) {
+            padding-bottom: 35px;
+            a {
+                height: 25px;
+                width: 25px;
+                &:not(:last-child){
+                    margin-right: 15px;
+                }
+            }
+        }
+        @include breakpoint-up(large) {
+            grid-area: social;
+            align-content:space-between;
+            a {
+                height: 15px;
+                width: 15px;
+                &:not(:last-child){
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            color: $lightGrayishBlue;
+            &:hover {
+                color: $limeGreen;
+            }
+            @include breakpoint-down(medium) {
+                line-height: 2.25;
+                font-size: 14px;
+            }
+            @include breakpoint-up(large) {
+                font-size: 15px;
+            }
+        }
+        @include breakpoint-up(large) {
+            font-size: 15px;
+            justify-content: space-between;
+        }
+
+        &.col1 {
+            @include breakpoint-up(large) {
+                grid-area: col1;
+                
+                
+            }
+        }
+        &.col2 {   
+            @include breakpoint-up(large) {
+                grid-area: col2;
+                
+            }
+        }
+    }
+
+
+
+    &__cta {
+        
+        a {
+            display: inline-block;
+        }
+        @include breakpoint-up(large) {
+            grid-area: cta;
+            justify-self: end;
+        }
+
+        @include breakpoint-down(medium) {
+          margin-top: 40px;
+          margin-bottom: 38px;
+          font-size: 13px;
+        }
+    }
+    &__copyright {
+        color: $grayishBlue;
+        @include breakpoint-down(medium) {
+            font-size: 16px;
+            padding-bottom: 44px;
+        }
+        @include breakpoint-up(large) {
+            grid-area: copyright;
+            justify-self: end;
+        }
+    }
+}
