@@ -19,10 +19,10 @@ To run this project locally, clone the repository and open the `index.html` file
 
 ## Screenshots
 - Mobile
-![Mobile](image-3.png)
+![Mobile View](screenshot/mobile-view.png)
 
 -Tablet
-![Tablet](image-4.png)
+![Tablet View](screenshot/tablet-view.png)
 
 -Desktop
-![Desktop](image-5.png)
+![Desktop View](screenshot/desktop-view.png)
